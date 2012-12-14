@@ -1,15 +1,9 @@
-//
-//  FruitConnectAppDelegate.cpp
-//  FruitConnect
-//
-//  Created by 柳亚鑫 on 12-10-10.
-//  Copyright __MyCompanyName__ 2012年. All rights reserved.
-//
-
 #include "AppDelegate.h"
 
 #include "cocos2d.h"
-#include "HelloWorldScene.h"
+#include "MenuLayer.h"
+#include "LevelLayer.h"
+#include "GameLayer.h"
 
 USING_NS_CC;
 
@@ -28,17 +22,18 @@ bool AppDelegate::applicationDidFinishLaunching()
     CCDirector *pDirector = CCDirector::sharedDirector();
     pDirector->setOpenGLView(CCEGLView::sharedOpenGLView());
 
+    CCEGLView::sharedOpenGLView()->setDesignResolutionSize(640, 960, kResolutionShowAll);
     // enable High Resource Mode(2x, such as iphone4) and maintains low resource on other devices.
     // pDirector->enableRetinaDisplay(true);
 
     // turn on display FPS
-    pDirector->setDisplayStats(true);
+    pDirector->setDisplayStats(false);
 
     // set FPS. the default value is 1.0/60 if you don't call this
     pDirector->setAnimationInterval(1.0 / 60);
 
     // create a scene. it's an autorelease object
-    CCScene *pScene = HelloWorld::scene();
+    CCScene *pScene = MenuLayer::scene();
 
     // run
     pDirector->runWithScene(pScene);
