@@ -229,8 +229,21 @@ bool LevelLayer::init(int mode)
         curStar = curStar / 10;
         allStar = allStar / 10;
     }
+    
+    schedule(schedule_selector(LevelLayer::preLoadEffect), 1.0f);
 
     return true;
+}
+
+
+void LevelLayer::preLoadEffect(CCTime dt) {
+    SimpleAudioEngine::sharedEngine()->preloadEffect("ready_go.wav");
+    SimpleAudioEngine::sharedEngine()->preloadEffect("first_tile.wav");
+    SimpleAudioEngine::sharedEngine()->preloadEffect("last_time.wav");
+    SimpleAudioEngine::sharedEngine()->preloadEffect("lose.wav");
+    SimpleAudioEngine::sharedEngine()->preloadEffect("press_button.wav");
+    SimpleAudioEngine::sharedEngine()->preloadEffect("win.wav");
+    unschedule(schedule_selector(LevelLayer::preLoadEffect));
 }
 
 int LevelLayer::getEarnedStarCount() {

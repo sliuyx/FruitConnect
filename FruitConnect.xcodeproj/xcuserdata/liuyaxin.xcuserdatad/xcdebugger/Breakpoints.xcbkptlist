@@ -9,11 +9,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "FruitConnect/Classes/GameLayer.cpp"
-         timestampString = "376753210.262018"
+         timestampString = "377200816.700873"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "775"
-         endingLineNumber = "775"
+         startingLineNumber = "779"
+         endingLineNumber = "779"
          landmarkName = "GameLayer::isDeathLock()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -23,11 +23,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "FruitConnect/Classes/GameLayer.cpp"
-         timestampString = "376753210.262018"
+         timestampString = "377200816.700873"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "707"
-         endingLineNumber = "707"
+         startingLineNumber = "711"
+         endingLineNumber = "711"
          landmarkName = "GameLayer::refreshItemNumber()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -37,11 +37,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "FruitConnect/Classes/LevelLayer.cpp"
-         timestampString = "376718568.219476"
+         timestampString = "377202885.398176"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "335"
-         endingLineNumber = "335"
+         startingLineNumber = "349"
+         endingLineNumber = "349"
          landmarkName = "LevelLayer::getLevelStarCount(int level, int levelScore)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -51,11 +51,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "FruitConnect/Classes/LevelLayer.cpp"
-         timestampString = "376718568.219476"
+         timestampString = "377202885.398176"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "362"
-         endingLineNumber = "362"
+         startingLineNumber = "376"
+         endingLineNumber = "376"
          landmarkName = "LevelLayer::refreshDotArea()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -65,11 +65,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "FruitConnect/Classes/LevelLayer.cpp"
-         timestampString = "376718568.219476"
+         timestampString = "377202885.398176"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "334"
-         endingLineNumber = "334"
+         startingLineNumber = "348"
+         endingLineNumber = "348"
          landmarkName = "LevelLayer::getLevelStarCount(int level, int levelScore)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -79,11 +79,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "FruitConnect/Classes/GameLayer.cpp"
-         timestampString = "376753210.262018"
+         timestampString = "377201146.660113"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "1660"
-         endingLineNumber = "1660"
+         startingLineNumber = "1684"
+         endingLineNumber = "1684"
          landmarkName = "GameLayer::ccTouchEnded(TileSprite* sprite, CCTouch *touch, CCEvent *event)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -93,11 +93,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "FruitConnect/Classes/GameLayer.cpp"
-         timestampString = "376753210.262018"
+         timestampString = "377200816.700873"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "159"
-         endingLineNumber = "159"
+         startingLineNumber = "163"
+         endingLineNumber = "163"
          landmarkName = "GameLayer::init()"
          landmarkType = "5">
       </FileBreakpoint>
@@ -107,11 +107,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "FruitConnect/Classes/ShopLayer.h"
-         timestampString = "376933404.37018"
+         timestampString = "377200816.700873"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "72"
-         endingLineNumber = "72"
+         startingLineNumber = "74"
+         endingLineNumber = "74"
          landmarkName = "class BuyButtonSprite"
          landmarkType = "3">
       </FileBreakpoint>
@@ -121,11 +121,39 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "FruitConnect/Classes/ShopLayer.cpp"
-         timestampString = "376933404.37018"
+         timestampString = "377200816.700873"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "274"
-         endingLineNumber = "274">
+         startingLineNumber = "297"
+         endingLineNumber = "297">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "FruitConnect/Classes/GameLayer.cpp"
+         timestampString = "377201339.747057"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "1514"
+         endingLineNumber = "1514"
+         landmarkName = "GameLayer::timeStepCallback(cocos2d::CCTime dt)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "FruitConnect/Classes/GameLayer.cpp"
+         timestampString = "377201345.222924"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "1515"
+         endingLineNumber = "1515"
+         landmarkName = "GameLayer::timeStepCallback(cocos2d::CCTime dt)"
+         landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

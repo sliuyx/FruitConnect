@@ -9,6 +9,9 @@
 #define MENULAYER_H_
 
 #include "cocos2d.h"
+#include "SimpleAudioEngine.h"
+
+USING_NS_CC;
 
 class MenuLayer : public cocos2d::CCLayer
 {

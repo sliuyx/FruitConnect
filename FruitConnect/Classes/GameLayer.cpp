@@ -13,6 +13,7 @@
 #include "ClassicLevelData.h"
 #include "MushroomLevelData.h"
 #include "EndlessLevelData.h"
+#include "SimpleAudioEngine.h"
 
 using namespace cocos2d;
 
@@ -91,11 +92,12 @@ bool GameLayer::init()
     m_soundOnItem = CCMenuItemImage::create(
         "music_on.png", "music_on.png", this, menu_selector(GameLayer::soundOnCallback));
     m_soundOnItem->setPosition(ccp(610, 930));
+    m_soundOnItem->setVisible(isMusicOn());
 
     m_soundOffItem = CCMenuItemImage::create(
         "music_off.png", "music_off.png", this, menu_selector(GameLayer::soundOffCallback));
     m_soundOffItem->setPosition(ccp(610, 930));
-    m_soundOffItem->setVisible(false);
+    m_soundOffItem->setVisible(!isMusicOn());
 
     CCMenuItemImage *pPauseItem = CCMenuItemImage::create(
         "pause_button.png", "pause_button.png", this, menu_selector(GameLayer::pauseCallback));
@@ -1040,6 +1042,7 @@ void GameLayer::showReadyStart() {
     start->setVisible(false);
     m_floatLayer->addChild(start,10);
     start->runAction(CCSequence::create(CCDelayTime::create(1.0f), CCShow::create(), CCFadeIn::create(0.2f), CCDelayTime::create(0.6), CCFadeOut::create(0.2f), CCCallFuncN::create(this, callfuncN_selector(GameLayer::playCallback)), NULL));
+    playMusic("ready_go.wav");
 }
 
 void GameLayer::showPauseLayer() {
@@ -1374,11 +1377,13 @@ void GameLayer::resumeCallback(cocos2d::CCObject *pSender) {
 void GameLayer::soundOnCallback(CCObject* pSender) {
     m_soundOnItem->setVisible(false);
     m_soundOffItem->setVisible(true);
+    setMusicOn(false);
 }
 
 void GameLayer::soundOffCallback(CCObject* pSender) {
     m_soundOffItem->setVisible(false);
     m_soundOnItem->setVisible(true);
+    setMusicOn(true);
 }
 void GameLayer::pauseCallback(CCObject* pSender) {
     if (m_status == RUNNING) {
@@ -1453,10 +1458,15 @@ void GameLayer::tipCallback(CCObject* pSender) {
                                                  NULL));
         }
     }
+    playMusic("press_button.wav");
 }
 void GameLayer::rerangeCallback(CCObject* pSender) {
     if (m_status != RUNNING) {
         return;
+    }
+    for (int i = 0; i < availablePair.size(); i++) {
+        PTileSprite sprite = availablePair[i];
+        sprite->setScale(m_tile_scale);
     }
     int rerangeNumber = getRerangeItemCount();
     if (rerangeNumber > 0) {
@@ -1466,6 +1476,7 @@ void GameLayer::rerangeCallback(CCObject* pSender) {
         rerangeItem->runAction(CCSequence::createWithTwoActions(CCScaleTo::create(0.2, 0.9), CCScaleTo::create(0.2, 0.75)));
         checkDeathAndRerange(false, true);
     }
+    playMusic("press_button.wav");
 }
 
 void GameLayer::timeCallback(CCObject* pSender) {
@@ -1488,6 +1499,7 @@ void GameLayer::timeCallback(CCObject* pSender) {
         this->addChild(add_time);
         add_time->runAction(CCSequence::create(CCMoveTo::create(0.5f, ccp(490, 802)), CCFadeOut::create(0.2f), NULL));
     }
+    playMusic("press_button.wav");
 }
 
 void GameLayer::playCallback(cocos2d::CCObject *pSender) {
@@ -1499,6 +1511,9 @@ void GameLayer::playCallback(cocos2d::CCObject *pSender) {
 void GameLayer::timeStepCallback(cocos2d::CCTime dt) {
     if (m_status == RUNNING) {
         m_time -= 0.1f;
+        if (((int)(m_time*10)) == 30 || ((int)(m_time*10)) == 20 || ((int)(m_time*10)) == 10) {
+            playMusic("last_time.wav");
+        }
         m_progress->runAction(CCScaleTo::create(0.1, m_time/m_max_time, 1));
         m_doublehit_time -= 0.1f;
         if (m_doublehit_time < 0) {
@@ -1530,6 +1545,11 @@ void GameLayer::timeStepCallback(cocos2d::CCTime dt) {
                 availablePair[i]->stopAllActions();
             }
             showResultLayer();
+            if (m_mode == ENDLESS_MODE) {
+                playMusic("win.wav");
+            } else {
+                playMusic("lose.wav");
+            }
         }
     }
 }
@@ -1609,6 +1629,7 @@ void GameLayer::generateRandomTile() {
         addTile(35-tileIndex, empty_pos[index1]);
         addTile(35-tileIndex, empty_pos[index2]);
     }
+    checkDeathAndRerange(false, false);
 }
 
 void GameLayer::addTile(int tileIndex, Coordinate pos) {
@@ -1649,6 +1670,7 @@ void GameLayer::ccTouchEnded(TileSprite* sprite, CCTouch *touch, CCEvent *event)
       sprite->runAction(CCRepeatForever::create(CCSequence::createWithTwoActions(
           CCScaleTo::create(0.2f, m_tile_scale*0.8), CCScaleTo::create(0.1f, m_tile_scale))));
       m_firstTile = sprite;
+      playMusic("first_tile.wav");
   } else {
       if (m_firstTile == sprite) {
 //          sprite->stopAllActions();
@@ -1672,6 +1694,7 @@ void GameLayer::ccTouchEnded(TileSprite* sprite, CCTouch *touch, CCEvent *event)
                   showCombo(m_doublehit_count, sprite);
               }
               m_doublehit_time = m_max_doublehit_time;
+              playMusic("second_tile.wav");
               if (checkWin()) {
                   if (m_mode == ENDLESS_MODE) {
                       m_score += 1000;
@@ -1681,6 +1704,7 @@ void GameLayer::ccTouchEnded(TileSprite* sprite, CCTouch *touch, CCEvent *event)
                       checkDeathAndRerange(true, false);
                       return;
                   } else {
+                      playMusic("win.wav");
                       m_score += 50*m_time;
                       m_status = WIN;
                       this->unschedule(schedule_selector(GameLayer::timeStepCallback));
@@ -1705,6 +1729,7 @@ void GameLayer::ccTouchEnded(TileSprite* sprite, CCTouch *touch, CCEvent *event)
               sprite->runAction(CCRepeatForever::create(CCSequence::createWithTwoActions(
                   CCScaleTo::create(0.2f, 0.8f*m_tile_scale), CCScaleTo::create(0.1f, m_tile_scale))));
               m_firstTile = sprite;
+              playMusic("first_tile.wav");
           }
       }
   }

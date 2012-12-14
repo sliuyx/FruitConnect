@@ -28,5 +28,10 @@ void saveRerangeItemCount(int value);
 
 void saveTimeItemCount(int value);
 
+bool isMusicOn();
+
+void setMusicOn(bool value);
+
+void playMusic(const char* music);
 
 #endif

@@ -7,8 +7,10 @@
 //
 #include "CommonFunctions.h"
 #include "cocos2d.h"
+#include "SimpleAudioEngine.h"
 
 using namespace cocos2d;
+using namespace CocosDenshion;
 
 int getNumberLength(int number) {
     int count = 1;
@@ -53,3 +55,23 @@ void saveRerangeItemCount(int value) {
 void saveTimeItemCount(int value) {
     SAVE_INTEGER("time_item_count", value);
 }
+
+bool isMusicOn() {
+    return (LOAD_INTEGER("music_on", 1) == 1);
+}
+
+void setMusicOn(bool value) {
+    if (value) {
+        SAVE_INTEGER("music_on", 1);
+    } else {
+        SAVE_INTEGER("music_on", 0);
+    }
+}
+
+void playMusic(const char* music) {
+    if (isMusicOn()) {
+        SimpleAudioEngine::sharedEngine()->playEffect(music);
+    }
+}
+
+

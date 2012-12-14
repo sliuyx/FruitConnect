@@ -158,6 +158,7 @@ bool MenuLayer::init()
     pFruit5->setScale(0.1);
     this->addChild(pFruit5);
     pFruit5->runAction(CCSequence::create(CCScaleTo::create(0.5f, 1.0f), CCCallFuncN::create(pFruit5, callfuncN_selector(MenuLayer::fruit1Callback)), NULL));
+    
     return true;
 }
 
