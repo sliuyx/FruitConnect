@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">水果连连看</string>
+    <string name="menu_feedback">反馈</string>
+    <string name="dialog_submitting">正在提交...</string>
+</resources>

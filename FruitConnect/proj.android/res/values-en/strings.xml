@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FruitConnect</string>
+    <string name="menu_feedback">Feedback</string>
+    <string name="dialog_submitting">Submitting...</string>
+</resources>
