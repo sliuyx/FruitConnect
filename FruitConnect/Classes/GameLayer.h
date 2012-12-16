@@ -59,6 +59,8 @@ public:
     virtual void ccTouchBegan(TileSprite* sprite, CCTouch *touch, CCEvent *event);
     virtual void ccTouchMoved(TileSprite* sprite, CCTouch *touch, CCEvent *event);
     virtual void ccTouchEnded(TileSprite* sprite, CCTouch *touch, CCEvent *event);
+    virtual void keyBackClicked();
+    virtual void keyMenuClicked();
     
     virtual void onEnter();
     virtual void onExit();

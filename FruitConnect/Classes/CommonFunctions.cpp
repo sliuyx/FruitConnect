@@ -8,6 +8,10 @@
 #include "CommonFunctions.h"
 #include "cocos2d.h"
 #include "SimpleAudioEngine.h"
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+#include <jni.h>
+#include "platform/android/jni/JniHelper.h"
+#endif
 
 using namespace cocos2d;
 using namespace CocosDenshion;
@@ -74,4 +78,22 @@ void playMusic(const char* music) {
     }
 }
 
+void callbackMenu() {
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+    JniMethodInfo mInfo;
+    bool isHave = JniHelper::getStaticMethodInfo(mInfo, "com/xxstudio/llk/Cocos2dHelper", "showMenu", "()V");
+    if (isHave) {
+        mInfo.env->CallStaticVoidMethod(mInfo.classID, mInfo.methodID);
+    }
+#endif
+}
 
+CCString* getPngPath(const char* path) {
+    ccLanguageType curLang = CCApplication::sharedApplication()->getCurrentLanguage();
+    if (curLang == kLanguageChinese) {
+        CCString* realPath = CCString::createWithFormat("cn/%s", path);
+        return realPath;
+    } else {
+        return CCString::createWithFormat("%s", path);
+    }
+}

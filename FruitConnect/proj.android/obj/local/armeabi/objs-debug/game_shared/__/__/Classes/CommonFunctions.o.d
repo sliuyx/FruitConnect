@@ -209,7 +209,11 @@ obj/local/armeabi/objs-debug/game_shared/__/__/Classes/CommonFunctions.o: \
  /projects/sdks/cocos2d-x/cocos2d-2.0-x-2.0.2/FruitConnect/FruitConnect/FruitConnect/proj.android/../../../../cocos2dx/touch_dispatcher/CCTouchDispatcher.h \
  /projects/sdks/cocos2d-x/cocos2d-2.0-x-2.0.2/FruitConnect/FruitConnect/FruitConnect/proj.android/../../../../cocos2dx/CCDrawingPrimitives.h \
  /projects/sdks/cocos2d-x/cocos2d-2.0-x-2.0.2/FruitConnect/FruitConnect/FruitConnect/proj.android/../../../../cocos2dx/CCScheduler.h \
- /projects/sdks/cocos2d-x/cocos2d-2.0-x-2.0.2/FruitConnect/FruitConnect/FruitConnect/proj.android/../../../../cocos2dx/support/data_support/uthash.h
+ /projects/sdks/cocos2d-x/cocos2d-2.0-x-2.0.2/FruitConnect/FruitConnect/FruitConnect/proj.android/../../../../cocos2dx/support/data_support/uthash.h \
+ /projects/sdks/cocos2d-x/cocos2d-2.0-x-2.0.2/FruitConnect/FruitConnect/FruitConnect/proj.android/../../../../CocosDenshion/android/../include/SimpleAudioEngine.h \
+ /projects/sdks/cocos2d-x/cocos2d-2.0-x-2.0.2/FruitConnect/FruitConnect/FruitConnect/proj.android/../../../../CocosDenshion/android/../include/Export.h \
+ /software/android-ndk-r8b/platforms/android-14/arch-arm/usr/include/jni.h \
+ /projects/sdks/cocos2d-x/cocos2d-2.0-x-2.0.2/FruitConnect/FruitConnect/FruitConnect/proj.android/../../../../cocos2dx/platform/android/jni/JniHelper.h
 
 jni/../../Classes/CommonFunctions.h:
 
@@ -632,3 +636,11 @@ jni/../../Classes/Common.h:
 /projects/sdks/cocos2d-x/cocos2d-2.0-x-2.0.2/FruitConnect/FruitConnect/FruitConnect/proj.android/../../../../cocos2dx/CCScheduler.h:
 
 /projects/sdks/cocos2d-x/cocos2d-2.0-x-2.0.2/FruitConnect/FruitConnect/FruitConnect/proj.android/../../../../cocos2dx/support/data_support/uthash.h:
+
+/projects/sdks/cocos2d-x/cocos2d-2.0-x-2.0.2/FruitConnect/FruitConnect/FruitConnect/proj.android/../../../../CocosDenshion/android/../include/SimpleAudioEngine.h:
+
+/projects/sdks/cocos2d-x/cocos2d-2.0-x-2.0.2/FruitConnect/FruitConnect/FruitConnect/proj.android/../../../../CocosDenshion/android/../include/Export.h:
+
+/software/android-ndk-r8b/platforms/android-14/arch-arm/usr/include/jni.h:
+
+/projects/sdks/cocos2d-x/cocos2d-2.0-x-2.0.2/FruitConnect/FruitConnect/FruitConnect/proj.android/../../../../cocos2dx/platform/android/jni/JniHelper.h:

@@ -23,6 +23,12 @@ public class Cocos2dHelper {
         }
     }
     
+    public static void showMenu() {
+        if (context != null) {
+            context.showMenu();
+        }
+    }
+    
     public static void spendPoints(final int itemType, final int itemCount, int point) {
         if (context != null) {
             AppConnect.getInstance(context).spendPoints(point,

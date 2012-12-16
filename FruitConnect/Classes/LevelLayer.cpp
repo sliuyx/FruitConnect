@@ -102,9 +102,9 @@ bool LevelLayer::init(int mode)
     
     CCSprite* pTitle = NULL;
     if (m_mode == CLASSIC_MODE) {
-        pTitle = CCSprite::create("level_title_classic.png");
+        pTitle = CCSprite::create(getPngPath("level_title_classic.png")->getCString());
     } else if (m_mode == MUSHROOM_MODE) {
-        pTitle = CCSprite::create("level_title_mushroom.png");
+        pTitle = CCSprite::create(getPngPath("level_title_mushroom.png")->getCString());
     }
     if (pTitle != NULL) {
         pTitle->setPosition(ccp(size.width/2, 870));
@@ -117,8 +117,8 @@ bool LevelLayer::init(int mode)
     this->addChild(pBoxFooter);
 
     CCMenuItemImage *pReturnItem = CCMenuItemImage::create(
-                                            "level_home_button.png",
-                                            "level_home_button.png",
+                                            "home_button.png",
+                                            "home_button.png",
                                             this,
                                             menu_selector(LevelLayer::backGameCallback) );
     pReturnItem->setPosition(ccp(30, 928));
@@ -383,6 +383,10 @@ void LevelLayer::backGameCallback(CCObject* pSender)
 
 void LevelLayer::keyBackClicked() {
     backGameCallback(NULL);
+}
+
+void LevelLayer::keyMenuClicked() {
+    callbackMenu();
 }
 
 bool LevelLayer::ccTouchBegan(CCTouch *touch, CCEvent *event) {

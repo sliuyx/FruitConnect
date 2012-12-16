@@ -11,6 +11,7 @@
 #include "Common.h"
 #include "GameLayer.h"
 #include "ShopLayer.h"
+#include "CommonFunctions.h"
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 #include <jni.h>
 #include "platform/android/jni/JniHelper.h"
@@ -73,30 +74,34 @@ bool MenuLayer::init()
                                                                                 CCMoveTo::create(2.0, ccp(size.width/2, size.height/2+290)))));
 
     CCMenuItemImage *pClassicItem = CCMenuItemImage::create(
-                                            "menu_classic.png",
-                                            "menu_classic_pressed.png",
+                                            getPngPath("menu_classic.png")->getCString(),
+                                            getPngPath("menu_classic_pressed.png")->getCString(),
                                             this,
                                             menu_selector(MenuLayer::classicGameCallback));
     pClassicItem->setPosition(ccp(size.width/2, 520-500));
     
     
-    CCMenuItemImage *pMushroomItem = CCMenuItemImage::create("menu_mushroom.png", "menu_mushroom_pressed.png",
+    CCMenuItemImage *pMushroomItem = CCMenuItemImage::create(
+                                                             getPngPath("menu_mushroom.png")->getCString(),
+                                                             getPngPath("menu_mushroom_pressed.png")->getCString(),
                                                              this, menu_selector(MenuLayer::mushroomGameCallback));
     pMushroomItem->setPosition(ccp(size.width/2, 420-500));
     
     CCMenuItemImage *pEndlessItem = CCMenuItemImage::create(
-                                            "menu_endless.png",
-                                            "menu_endless_pressed.png",
+                                            getPngPath("menu_endless.png")->getCString(),
+                                            getPngPath("menu_endless_pressed.png")->getCString(),
                                             this, menu_selector(MenuLayer::endlessGameCallback));
     pEndlessItem->setPosition(ccp(size.width/2, 320-500));
     
     
     
-    CCMenuItemImage *pShopItem = CCMenuItemImage::create("menu_shop.png", "menu_shop.png",
+    CCMenuItemImage *pShopItem = CCMenuItemImage::create(getPngPath("menu_shop.png")->getCString(),
+                                                         getPngPath("menu_shop.png")->getCString(),
                                                          this, menu_selector(MenuLayer::shopCallback));
     pShopItem->setPosition(ccp(180,90));
     
-    CCMenuItemImage *pMoreItem = CCMenuItemImage::create("menu_more.png", "menu_more.png",
+    CCMenuItemImage *pMoreItem = CCMenuItemImage::create(getPngPath("menu_more.png")->getCString(),
+                                                         getPngPath("menu_more.png")->getCString(),
                                                            this, menu_selector(MenuLayer::moreCallback));
     pMoreItem->setPosition(ccp(460,90));
 
@@ -104,13 +109,16 @@ bool MenuLayer::init()
     m_menuLayer->setPosition(CCPointZero);
     this->addChild(m_menuLayer);
     
-    CCMenuItemImage *pThreeItem = CCMenuItemImage::create("menu_three_minutes.png", "menu_three_minutes_pressed.png",
+    CCMenuItemImage *pThreeItem = CCMenuItemImage::create(getPngPath("menu_three_minutes.png")->getCString(),
+                                                          getPngPath("menu_three_minutes_pressed.png")->getCString(),
                                                           this, menu_selector(MenuLayer::threeCallback));
     pThreeItem->setPosition(ccp(size.width/2, 520-500));
-    CCMenuItemImage *pSixItem = CCMenuItemImage::create("menu_six_minutes.png", "menu_six_minutes_pressed.png",
+    CCMenuItemImage *pSixItem = CCMenuItemImage::create(getPngPath("menu_six_minutes.png")->getCString(),
+                                                        getPngPath("menu_six_minutes_pressed.png")->getCString(),
                                                         this, menu_selector(MenuLayer::sixCallback));
     pSixItem->setPosition(ccp(size.width/2, 420-500));
-    CCMenuItemImage *pCancelItem = CCMenuItemImage::create("menu_cancel.png", "menu_cancel_pressed.png",
+    CCMenuItemImage *pCancelItem = CCMenuItemImage::create(getPngPath("menu_cancel.png")->getCString(),
+                                                           getPngPath("menu_cancel_pressed.png")->getCString(),
                                                            this, menu_selector(MenuLayer::cancelCallback));
     pCancelItem->setPosition(ccp(size.width/2, 320-500));
     m_endless_menu_layer = CCMenu::create(pThreeItem, pSixItem, pCancelItem, NULL);
@@ -235,6 +243,11 @@ void MenuLayer::keyBackClicked() {
     exit(0);
 #endif
 }
+
+void MenuLayer::keyMenuClicked() {
+    callbackMenu();
+}
+
 
 
 

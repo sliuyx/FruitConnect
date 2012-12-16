@@ -39,6 +39,7 @@ public:
     virtual void moveContainer(float x);
     virtual void onClick(LevelSprite* sprite);
     virtual void keyBackClicked();
+    virtual void keyMenuClicked();
     void preLoadEffect(CCTime dt);
     
 private:

@@ -210,9 +210,11 @@ obj/local/armeabi/objs-debug/game_shared/__/__/Classes/AppDelegate.o: \
  /projects/sdks/cocos2d-x/cocos2d-2.0-x-2.0.2/FruitConnect/FruitConnect/FruitConnect/proj.android/../../../../cocos2dx/CCDrawingPrimitives.h \
  /projects/sdks/cocos2d-x/cocos2d-2.0-x-2.0.2/FruitConnect/FruitConnect/FruitConnect/proj.android/../../../../cocos2dx/CCScheduler.h \
  /projects/sdks/cocos2d-x/cocos2d-2.0-x-2.0.2/FruitConnect/FruitConnect/FruitConnect/proj.android/../../../../cocos2dx/support/data_support/uthash.h \
- jni/../../Classes/MenuLayer.h jni/../../Classes/LevelLayer.h \
- jni/../../Classes/TouchableSprite.h jni/../../Classes/GameLayer.h \
- jni/../../Classes/Common.h
+ jni/../../Classes/MenuLayer.h \
+ /projects/sdks/cocos2d-x/cocos2d-2.0-x-2.0.2/FruitConnect/FruitConnect/FruitConnect/proj.android/../../../../CocosDenshion/android/../include/SimpleAudioEngine.h \
+ /projects/sdks/cocos2d-x/cocos2d-2.0-x-2.0.2/FruitConnect/FruitConnect/FruitConnect/proj.android/../../../../CocosDenshion/android/../include/Export.h \
+ jni/../../Classes/LevelLayer.h jni/../../Classes/TouchableSprite.h \
+ jni/../../Classes/GameLayer.h jni/../../Classes/Common.h
 
 jni/../../Classes/AppDelegate.h:
 
@@ -637,6 +639,10 @@ jni/../../Classes/AppDelegate.h:
 /projects/sdks/cocos2d-x/cocos2d-2.0-x-2.0.2/FruitConnect/FruitConnect/FruitConnect/proj.android/../../../../cocos2dx/support/data_support/uthash.h:
 
 jni/../../Classes/MenuLayer.h:
+
+/projects/sdks/cocos2d-x/cocos2d-2.0-x-2.0.2/FruitConnect/FruitConnect/FruitConnect/proj.android/../../../../CocosDenshion/android/../include/SimpleAudioEngine.h:
+
+/projects/sdks/cocos2d-x/cocos2d-2.0-x-2.0.2/FruitConnect/FruitConnect/FruitConnect/proj.android/../../../../CocosDenshion/android/../include/Export.h:
 
 jni/../../Classes/LevelLayer.h:
 

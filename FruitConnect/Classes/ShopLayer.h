@@ -34,6 +34,7 @@ public:
     static cocos2d::CCScene* scene();
     
     virtual void keyBackClicked();
+    virtual void keyMenuClicked();
     
     void homeCallback(CCObject* pSender);
     virtual void onEnter();

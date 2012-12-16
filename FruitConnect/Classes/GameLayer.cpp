@@ -56,6 +56,7 @@ bool GameLayer::init()
     {
         return false;
     }
+    this->setKeypadEnabled(true);
     m_status = READY;
 
     CCSize size = CCDirector::sharedDirector()->getWinSize();
@@ -617,7 +618,7 @@ void GameLayer::initItemToolbar() {
     refreshItemNumber();
     
     if (m_mode == CLASSIC_MODE) {
-        CCSprite* title = CCSprite::create("game_title_classic.png");
+        CCSprite* title = CCSprite::create(getPngPath("game_title_classic.png")->getCString());
         title->setPosition(ccp(188, 874));
         this->addChild(title);
         
@@ -634,7 +635,7 @@ void GameLayer::initItemToolbar() {
             levelNo /= 10;
         }
     } else if (m_mode == MUSHROOM_MODE) {
-        CCSprite* title = CCSprite::create("game_title_mushroom.png");
+        CCSprite* title = CCSprite::create(getPngPath("game_title_mushroom.png")->getCString());
         title->setPosition(ccp(190, 874));
         this->addChild(title);
         
@@ -651,7 +652,7 @@ void GameLayer::initItemToolbar() {
             levelNo /= 10;
         }
     } else if (m_mode == ENDLESS_MODE) {
-        CCSprite* title = CCSprite::create("game_title_endless.png");
+        CCSprite* title = CCSprite::create(getPngPath("game_title_endless.png")->getCString());
         title->setPosition(ccp(185, 864));
         this->addChild(title);
     }
@@ -713,6 +714,14 @@ void GameLayer::refreshItemNumber() {
         initX-=12;
         timeItemNumber = timeItemNumber / 10;
     } while (timeItemNumber > 0);
+}
+
+void GameLayer::keyBackClicked() {
+    pauseCallback(NULL);
+}
+
+void GameLayer::keyMenuClicked() {
+    callbackMenu();
 }
 
 void GameLayer::rerangeMap() {

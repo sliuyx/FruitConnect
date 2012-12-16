@@ -211,7 +211,10 @@ obj/local/armeabi/objs-debug/game_shared/__/__/Classes/GameLayer.o: \
  /projects/sdks/cocos2d-x/cocos2d-2.0-x-2.0.2/FruitConnect/FruitConnect/FruitConnect/proj.android/../../../../cocos2dx/support/data_support/uthash.h \
  jni/../../Classes/Common.h jni/../../Classes/TouchableSprite.h \
  jni/../../Classes/LevelLayer.h jni/../../Classes/CommonFunctions.h \
- jni/../../Classes/MenuLayer.h jni/../../Classes/ParticleWhiteSun.h \
+ jni/../../Classes/MenuLayer.h \
+ /projects/sdks/cocos2d-x/cocos2d-2.0-x-2.0.2/FruitConnect/FruitConnect/FruitConnect/proj.android/../../../../CocosDenshion/android/../include/SimpleAudioEngine.h \
+ /projects/sdks/cocos2d-x/cocos2d-2.0-x-2.0.2/FruitConnect/FruitConnect/FruitConnect/proj.android/../../../../CocosDenshion/android/../include/Export.h \
+ jni/../../Classes/ParticleWhiteSun.h \
  jni/../../Classes/ClassicLevelData.h \
  jni/../../Classes/MushroomLevelData.h \
  jni/../../Classes/EndlessLevelData.h
@@ -645,6 +648,10 @@ jni/../../Classes/LevelLayer.h:
 jni/../../Classes/CommonFunctions.h:
 
 jni/../../Classes/MenuLayer.h:
+
+/projects/sdks/cocos2d-x/cocos2d-2.0-x-2.0.2/FruitConnect/FruitConnect/FruitConnect/proj.android/../../../../CocosDenshion/android/../include/SimpleAudioEngine.h:
+
+/projects/sdks/cocos2d-x/cocos2d-2.0-x-2.0.2/FruitConnect/FruitConnect/FruitConnect/proj.android/../../../../CocosDenshion/android/../include/Export.h:
 
 jni/../../Classes/ParticleWhiteSun.h:
 

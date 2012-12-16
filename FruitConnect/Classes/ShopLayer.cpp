@@ -56,6 +56,10 @@ void ShopLayer::keyBackClicked() {
     homeCallback(NULL);
 }
 
+void ShopLayer::keyMenuClicked() {
+    callbackMenu();
+}
+
 void ShopLayer::homeCallback(cocos2d::CCObject *pSender) {
     CCTransitionFade* transition = CCTransitionFade::create(0.3, MenuLayer::scene());
     CCDirector::sharedDirector()->pushScene(transition);
@@ -172,8 +176,8 @@ void ShopLayer::initScrollArea() {
                                                          this,
                                                          menu_selector(ShopLayer::homeCallback));
     pHomeItem->setPosition(ccp(572, 68));
-    CCMenuItemImage *pFree = CCMenuItemImage::create("get_free_coins.png",
-                                                    "get_free_coins_pressed.png",
+    CCMenuItemImage *pFree = CCMenuItemImage::create(getPngPath("get_free_coins.png")->getCString(),
+                                                    getPngPath("get_free_coins_pressed.png")->getCString(),
                                                      this,
                                                      menu_selector(ShopLayer::freeCoinCallback));
     pFree->setPosition(ccp(280, 90));
@@ -242,7 +246,7 @@ void ShopLayer::drawItemLine(int type, int item_number, int gold_number, CCPoint
     gold->setPosition(ccp(290, point.y+50));
     m_scroll_area->addChild(gold);
     drawNumbersToLayer(m_scroll_area, gold_number, ccp(330, point.y+50), true, 1);
-    BuyButtonSprite* buy = BuyButtonSprite::create("shop_buy.png", type, item_number, gold_number, this);
+    BuyButtonSprite* buy = BuyButtonSprite::create(getPngPath("shop_buy.png")->getCString(), type, item_number, gold_number, this);
     buy->setPosition(ccp(470, point.y+50));
     m_scroll_area->addChild(buy);
     CCSprite* seperator = CCSprite::create("shop_line_seperator.png");

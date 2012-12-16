@@ -160,6 +160,15 @@ public class FruitConnect extends Cocos2dxActivity implements UpdatePointsNotifi
         });
 	}
 	
+	public void showMenu() {
+	    handler.post(new Runnable() {
+            @Override
+            public void run() {
+                openOptionsMenu();
+            }
+        });
+	}
+	
 	 @Override
 	 protected void onPause() {
 	     super.onPause();

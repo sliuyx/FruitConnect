@@ -21,6 +21,7 @@ public:
     static cocos2d::CCScene* scene();
     
     virtual void keyBackClicked();
+    virtual void keyMenuClicked();
 
     void classicGameCallback(CCObject* pSender);
     void endlessGameCallback(CCObject* pSender);

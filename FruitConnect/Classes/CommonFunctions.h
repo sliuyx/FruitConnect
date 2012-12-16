@@ -9,6 +9,9 @@
 #ifndef FruitConnect_CommonFunctions_h
 #define FruitConnect_CommonFunctions_h
 #include "Common.h"
+#include "cocos2d.h"
+
+USING_NS_CC;
 
 int getNumberLength(int number);
 
@@ -33,5 +36,9 @@ bool isMusicOn();
 void setMusicOn(bool value);
 
 void playMusic(const char* music);
+
+void callbackMenu();
+
+CCString* getPngPath(const char* path);
 
 #endif
