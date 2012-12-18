@@ -49,6 +49,7 @@ bool ShopLayer::init()
     initOwnedItems();
     initScrollbar();
     
+    showShopAd();
     return true;
 }
 

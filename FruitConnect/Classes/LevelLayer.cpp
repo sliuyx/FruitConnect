@@ -232,6 +232,7 @@ bool LevelLayer::init(int mode)
     
     schedule(schedule_selector(LevelLayer::preLoadEffect), 1.0f);
 
+    showLevelAd();
     return true;
 }
 

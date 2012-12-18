@@ -88,6 +88,56 @@ void callbackMenu() {
 #endif
 }
 
+void showMenuAd() {
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+    JniMethodInfo mInfo;
+    bool isHave = JniHelper::getStaticMethodInfo(mInfo, "com/xxstudio/llk/Cocos2dHelper", "showMenuSceneAd", "()V");
+    if (isHave) {
+        mInfo.env->CallStaticVoidMethod(mInfo.classID, mInfo.methodID);
+    }
+#endif  
+}
+
+void showLevelAd() {
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+    JniMethodInfo mInfo;
+    bool isHave = JniHelper::getStaticMethodInfo(mInfo, "com/xxstudio/llk/Cocos2dHelper", "showLevelSceneAd", "()V");
+    if (isHave) {
+        mInfo.env->CallStaticVoidMethod(mInfo.classID, mInfo.methodID);
+    }
+#endif 
+}
+
+void showGameAd() {
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+    JniMethodInfo mInfo;
+    bool isHave = JniHelper::getStaticMethodInfo(mInfo, "com/xxstudio/llk/Cocos2dHelper", "showGameSceneAd", "()V");
+    if (isHave) {
+        mInfo.env->CallStaticVoidMethod(mInfo.classID, mInfo.methodID);
+    }
+#endif 
+}
+
+void showGamePauseAd() {
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+    JniMethodInfo mInfo;
+    bool isHave = JniHelper::getStaticMethodInfo(mInfo, "com/xxstudio/llk/Cocos2dHelper", "showGamePauseAd", "()V");
+    if (isHave) {
+        mInfo.env->CallStaticVoidMethod(mInfo.classID, mInfo.methodID);
+    }
+#endif 
+}
+
+void showShopAd() {
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+    JniMethodInfo mInfo;
+    bool isHave = JniHelper::getStaticMethodInfo(mInfo, "com/xxstudio/llk/Cocos2dHelper", "showShopSceneAd", "()V");
+    if (isHave) {
+        mInfo.env->CallStaticVoidMethod(mInfo.classID, mInfo.methodID);
+    }
+#endif 
+}
+
 CCString* getPngPath(const char* path) {
     ccLanguageType curLang = CCApplication::sharedApplication()->getCurrentLanguage();
     if (curLang == kLanguageChinese) {

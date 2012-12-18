@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="com.xxstudio.llk"
+      package="com.xxstudio.fruitconnect"
       android:versionCode="1"
       android:versionName="1.0">
 
@@ -84,7 +84,7 @@
         </service>
         <meta-data android:value="50c75f735270153a7b000025" android:name="UMENG_APPKEY"></meta-data>
         <meta-data android:value="Wandoujia" android:name="UMENG_CHANNEL"/>
-        <meta-data android:name="WAPS_ID" android:value="d2e35dece41cda58c7ab78baf9c7fd23" />
+        <meta-data android:name="WAPS_ID" android:value="2d73c4184bc8c265bc69ff770a3d99be" />
         <meta-data android:name="WAPS_PID" android:value="Wandoujia" />
         <meta-data android:name="cooId" android:value="dfe8d267d73c4858b32d446e7017729d"/>
         <meta-data android:name="channelId" android:value="Wandoujia"/>

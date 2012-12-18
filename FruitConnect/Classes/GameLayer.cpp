@@ -1052,6 +1052,7 @@ void GameLayer::showReadyStart() {
     m_floatLayer->addChild(start,10);
     start->runAction(CCSequence::create(CCDelayTime::create(1.0f), CCShow::create(), CCFadeIn::create(0.2f), CCDelayTime::create(0.6), CCFadeOut::create(0.2f), CCCallFuncN::create(this, callfuncN_selector(GameLayer::playCallback)), NULL));
     playMusic("ready_go.wav");
+    showGameAd();
 }
 
 void GameLayer::showPauseLayer() {
@@ -1079,6 +1080,8 @@ void GameLayer::showPauseLayer() {
     pReturn->runAction(CCFadeIn::create(0.2f));
     pReplay->runAction(CCFadeIn::create(0.2f));
     pResume->runAction(CCFadeIn::create(0.2f));
+    
+    showGamePauseAd();
 }
 
 void GameLayer::showResultLayer() {
@@ -1287,8 +1290,8 @@ void GameLayer::showResultLayer() {
             noSprite->runAction(CCSequence::create(CCDelayTime::create(3.4f), CCFadeIn::create(0.1f), NULL));
             initX -= 45;
         } while (score > 0);
-        
     }
+    showGamePauseAd();
 }
 
 int GameLayer::getStarNo() {

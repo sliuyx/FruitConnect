@@ -2,6 +2,7 @@ package com.xxstudio.llk;
 
 import com.waps.AppConnect;
 import com.waps.UpdatePointsNotifier;
+import com.xxstudio.fruitconnect.FruitConnect;
 
 public class Cocos2dHelper {
 
@@ -26,6 +27,46 @@ public class Cocos2dHelper {
     public static void showMenu() {
         if (context != null) {
             context.showMenu();
+        }
+    }
+    
+    public static void showMenuSceneAd() {
+        if (context != null) {
+            context.showTopAdView();
+            context.hideBottomAdView();
+            context.hideBottomMiniView();
+        }
+    }
+    
+    public static void showLevelSceneAd() {
+        if (context != null) {
+            context.showBottomAdView();
+            context.hideTopAdView();
+            context.hideBottomMiniView();
+        }
+    }
+    
+    public static void showGameSceneAd() {
+        if (context != null) {
+            context.showBottomMiniView();
+            context.hideTopAdView();
+            context.hideBottomAdView();
+        }
+    }
+    
+    public static void showGamePauseAd() {
+        if (context != null) {
+            context.showBottomAdView();
+            context.hideTopAdView();
+            context.hideBottomMiniView();
+        }
+    }
+    
+    public static void showShopSceneAd() {
+        if (context != null) {
+            context.hideTopAdView();
+            context.hideBottomAdView();
+            context.hideBottomMiniView();
         }
     }
     

@@ -39,6 +39,16 @@ void playMusic(const char* music);
 
 void callbackMenu();
 
+void showMenuAd();
+
+void showLevelAd();
+
+void showGameAd();
+
+void showGamePauseAd();
+
+void showShopAd();
+
 CCString* getPngPath(const char* path);
 
 #endif
